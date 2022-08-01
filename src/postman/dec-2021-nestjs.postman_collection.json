@@ -17,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbUBnbWFpbC5jb20iLCJuYW1lIjoiU2FtIiwiaWF0IjoxNjU5MzY0NDkwfQ.0Q4kwySJRNE_yRvYfH--gFf-JI2umY11sPX6NOFH9pQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpbWFAZ21haWwuY29tIiwibmFtZSI6IkRpbWEiLCJpYXQiOjE2NTkzODQ2MTF9.f_BWZESeABKPV6m-vy_XCk0gjLz-O7NGQyQhYxbpYDo",
 									"type": "string"
 								}
 							]
@@ -36,6 +36,16 @@
 				{
 					"name": "update user",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpbWFAZ21haWwuY29tIiwibmFtZSI6IkRpbWEiLCJpYXQiOjE2NTkzODQ2MTF9.f_BWZESeABKPV6m-vy_XCk0gjLz-O7NGQyQhYxbpYDo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -68,6 +78,16 @@
 				{
 					"name": "delete user",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpbWFAZ21haWwuY29tIiwibmFtZSI6IkRpbWEiLCJpYXQiOjE2NTkzODQ2MTF9.f_BWZESeABKPV6m-vy_XCk0gjLz-O7NGQyQhYxbpYDo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"body": {
@@ -90,7 +110,7 @@
 							"variable": [
 								{
 									"key": "id",
-									"value": "62e7bf58ee6f71e38de74ea3"
+									"value": "62e7bfd933ff0315990c0997"
 								}
 							]
 						}
@@ -100,6 +120,16 @@
 				{
 					"name": "user by ID",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpbWFAZ21haWwuY29tIiwibmFtZSI6IkRpbWEiLCJpYXQiOjE2NTkzODQ2MTF9.f_BWZESeABKPV6m-vy_XCk0gjLz-O7NGQyQhYxbpYDo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -123,6 +153,16 @@
 				{
 					"name": "create user",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRpbWFAZ21haWwuY29tIiwibmFtZSI6IkRpbWEiLCJpYXQiOjE2NTkzODQ2MTF9.f_BWZESeABKPV6m-vy_XCk0gjLz-O7NGQyQhYxbpYDo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -155,7 +195,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Sam\",\r\n    \"age\": 33,\r\n    \"email\": \"sam@gmail.com\",\r\n    \"password\": \"pa$$w0rD\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Tetyana\",\r\n    \"age\": 28,\r\n    \"email\": \"tat@gmail.com\",\r\n    \"password\": \"pa$$w0rD\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -181,7 +221,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"sam@gmail.com\",\r\n    \"password\": \"pa$$w0rD\"\r\n}",
+							"raw": "{\r\n    \"email\": \"dima@gmail.com\",\r\n    \"password\": \"pa$$w0rD\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

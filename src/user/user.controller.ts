@@ -1,9 +1,9 @@
 import {Body, Controller, Delete, Get, Param, Patch, Post, UseGuards} from '@nestjs/common';
 
 import {UserService} from "./user.service";
-import {CreateUserDto} from "./dto/create-user.dto";
 import {UpdateUserDto} from "./dto/update-user.dto";
 import {AuthGuard} from "../auth/jwt-auth.guard";
+import {RegisterUserDto} from "../auth/dto/register-user.dto";
 
 @Controller('user')
 export class UserController {
@@ -25,8 +25,8 @@ export class UserController {
 
     @Post()
     @UseGuards(AuthGuard)
-    create(@Body() user: CreateUserDto) {
-        return this.userService.create(user);
+    create(@Body() newUser: RegisterUserDto) {
+        return this.userService.create(newUser);
     }
 
     @Patch('/:id')
