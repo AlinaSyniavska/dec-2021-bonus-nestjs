@@ -8,127 +8,199 @@
 	"item": [
 		{
 			"name": "users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}user",
-					"host": [
-						"{{HOST}}user"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "update user",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"IvanN\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbUBnbWFpbC5jb20iLCJuYW1lIjoiU2FtIiwiaWF0IjoxNjU5MzY0NDkwfQ.0Q4kwySJRNE_yRvYfH--gFf-JI2umY11sPX6NOFH9pQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}user",
+							"host": [
+								"{{HOST}}user"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{HOST}}user/:id",
-					"host": [
-						"{{HOST}}user"
-					],
-					"path": [
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "62e58afca17bb9535cfda710"
+				{
+					"name": "update user",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"IvanN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}user/:id",
+							"host": [
+								"{{HOST}}user"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62e58afca17bb9535cfda710"
+								}
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delete user",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{HOST}}user/:id",
-					"host": [
-						"{{HOST}}user"
-					],
-					"path": [
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "62e580c0c1be8db9a06ef768"
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}user/:id",
+							"host": [
+								"{{HOST}}user"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62e7bf58ee6f71e38de74ea3"
+								}
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "user by ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{HOST}}user/:id",
-					"host": [
-						"{{HOST}}user"
-					],
-					"path": [
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "62e58093c1be8db9a06ef766"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "create user",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Tony\",\r\n    \"age\": 22,\r\n    \"email\": \"tony@gmail.com\",\r\n    \"workStatus\": true\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "{{HOST}}user",
-					"host": [
-						"{{HOST}}user"
-					]
+				{
+					"name": "user by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}user/:id",
+							"host": [
+								"{{HOST}}user"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "62e7afac58223239d037bfab"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ivan\",\r\n    \"age\": 35,\r\n    \"email\": \"iv@gmail.com\",\r\n    \"password\": \"pa$$w0rD\",\r\n    \"workStatus\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}user",
+							"host": [
+								"{{HOST}}user"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sam\",\r\n    \"age\": 33,\r\n    \"email\": \"sam@gmail.com\",\r\n    \"password\": \"pa$$w0rD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}auth/registration",
+							"host": [
+								"{{HOST}}auth"
+							],
+							"path": [
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sam@gmail.com\",\r\n    \"password\": \"pa$$w0rD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}auth/login",
+							"host": [
+								"{{HOST}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

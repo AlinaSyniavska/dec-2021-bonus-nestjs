@@ -1,5 +1,6 @@
 import {
-    IsBoolean, IsNotEmpty,
+    IsBoolean,
+    IsNotEmpty,
     IsNumber,
     IsOptional,
     IsPositive,
@@ -10,7 +11,7 @@ import {
     Min, MinLength
 } from "class-validator";
 
-export class CreateUserDto {
+export class RegisterUserDto {
     @IsString()
     @Length(2, 20)
     public name: string;
@@ -22,7 +23,6 @@ export class CreateUserDto {
     public age: number;
 
     @IsString()
-    // @IsEmail()
     @Matches(/^[a-zA-Z\d.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z\d](?:[a-zA-Z\d-]{0,61}[a-zA-Z\d])?(?:\.[a-zA-Z\d](?:[a-zA-Z\d-]{0,61}[a-zA-Z\d])?)*/i)
     public email: string;
 

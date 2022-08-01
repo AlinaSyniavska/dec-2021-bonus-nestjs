@@ -15,6 +15,7 @@ model User {
   name       String
   age        Int
   email      String
+  password   String
   workStatus Boolean? @default(false)
   createAt   DateTime @default(now()) @db.Timestamp()
   updateAt   DateTime @default(now()) @db.Timestamp()

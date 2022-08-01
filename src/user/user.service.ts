@@ -1,11 +1,12 @@
 import {Injectable} from '@nestjs/common';
-import {Prisma, User } from '@prisma/client';
+import {Prisma, User} from '@prisma/client';
 
-import {PrismaService} from "../core/prisma.service";
+import {PrismaService} from '../core/prisma.service';
 
 @Injectable()
 export class UserService {
-    constructor(private prismaService: PrismaService) { }
+    constructor(private prismaService: PrismaService) {
+    }
 
     async getAll(): Promise<User[]> {
         return this.prismaService.user.findMany();
@@ -14,6 +15,12 @@ export class UserService {
     async getById(userId: string): Promise<User> {
         return this.prismaService.user.findUnique({
             where: {id: userId}
+        });
+    }
+
+    async getByEmail(userEmail: string): Promise<User> {
+        return this.prismaService.user.findFirst({
+            where: {email: userEmail}
         });
     }
 
@@ -48,7 +55,7 @@ export class UserService {
         where: Prisma.UserWhereUniqueInput;
         data: Prisma.UserUpdateInput;
     }): Promise<User> {
-        const { where, data } = params;
+        const {where, data} = params;
         return this.prismaService.user.update({
             data,
             where,
