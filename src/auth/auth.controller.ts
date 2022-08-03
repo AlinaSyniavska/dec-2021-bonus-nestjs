@@ -1,4 +1,4 @@
-import {Body, Controller, Post} from '@nestjs/common';
+import {Body, Controller, HttpCode, Post} from '@nestjs/common';
 
 import {AuthService} from "./auth.service";
 import {LoginUserDto} from "./dto/login-user.dto";
@@ -21,6 +21,7 @@ export class AuthController {
     @CustomOkResponse({exampleData: SWAGGER_EXAMPLE_LOGIN_USER})
     @ApiBadRequestResponse({description: 'Bad Request'})
     @ApiNotFoundResponse({description: 'Not Found'})
+    @HttpCode(200)
     login(@Body() loginUser: LoginUserDto) {
         return this.authService.login(loginUser);
     }

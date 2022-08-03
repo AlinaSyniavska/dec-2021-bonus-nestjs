@@ -1,4 +1,5 @@
-import {Body, Controller, Delete, Get, Param, Patch, Post, UseGuards} from '@nestjs/common';
+import {Body, Controller, Delete, Get, HttpStatus, Param, Patch, Post, Res, UseGuards} from '@nestjs/common';
+import {Response} from "express";
 
 import {UserService} from "./user.service";
 import {UpdateUserDto} from "./dto/update-user.dto";
@@ -71,11 +72,15 @@ export class UserController {
 
     @Delete('/:id')
     @ApiParam({name: 'id', type: 'string'})
-    @CustomOkResponse({exampleData: SWAGGER_EXAMPLE_REGISTER_USER})
+    @CustomOkResponse({status: 204, exampleData: SWAGGER_EXAMPLE_REGISTER_USER})
     @ApiNotFoundResponse({description: 'Not Found'})
     @UseGuards(AuthGuard)
-    delete(@Param('id') id: string) {
-        return this.userService.delete(id);
+    async delete(@Param('id') id: string, @Res() response: Response) {
+        await this.userService.delete(id);
+        response
+            .status(HttpStatus.NO_CONTENT)
+            .send('User was deleted');
+        return;
     }
 }
 
