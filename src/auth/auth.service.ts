@@ -33,17 +33,18 @@ export class AuthService {
         }
 
         const hashPassword = await bcrypt.hash(user.password, 7);
-        const newUser = await this.userService.create({
+        return await this.userService.create({
             ...user,
             password: hashPassword,
         });
-
-        // return this.generateToken(newUser);
-        return newUser;
     }
 
     private async validateUser(user: LoginUserDto) {
         const userFromDB = await this.userService.getByEmail(user.email);
+
+        console.log(userFromDB.password);
+        console.log(user.password);
+
         const isPassEqual = await bcrypt.compare(user.password, userFromDB.password);
 
         if(userFromDB && isPassEqual) {

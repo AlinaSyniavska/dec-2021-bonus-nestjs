@@ -11,11 +11,12 @@ import {
     SWAGGER_EXAMPLE_GET_ALL_USERS,
     SWAGGER_EXAMPLE_REGISTER_USER
 } from "../core/swagger/example/swagger-example-user.list";
+import {AuthService} from "../auth/auth.service";
 
 @ApiTags('User')
 @Controller('user')
 export class UserController {
-    constructor(private readonly userService: UserService) {
+    constructor(private readonly userService: UserService, private readonly authService: AuthService) {
     }
 
     @Get()
@@ -40,24 +41,25 @@ export class UserController {
     @Post()
     @ApiBody({type: RegisterUserDto})
     @CustomOkResponse({status: 201, exampleData: SWAGGER_EXAMPLE_REGISTER_USER})
-/*    @ApiOkResponse({
-        status: 201,
-        schema: {
-            example: {
-                id: '62e8f9f9e378d290eb642c6c',
-                name: "Nick",
-                age: 39,
-                email: "nick@gmail.com",
-                password: "$2a$07$xGwImr4LuMJCCvzIcrXlJuFlnb1Bl.Bpj7mtFlTgbeFzpP7wh8sgm",
-                workStatus: false,
-                createAt: "2022-08-02T10:18:33.000Z",
-                updateAt: "2022-08-02T10:18:33.000Z"
+    /*    @ApiOkResponse({
+            status: 201,
+            schema: {
+                example: {
+                    id: '62e8f9f9e378d290eb642c6c',
+                    name: "Nick",
+                    age: 39,
+                    email: "nick@gmail.com",
+                    password: "$2a$07$xGwImr4LuMJCCvzIcrXlJuFlnb1Bl.Bpj7mtFlTgbeFzpP7wh8sgm",
+                    workStatus: false,
+                    createAt: "2022-08-02T10:18:33.000Z",
+                    updateAt: "2022-08-02T10:18:33.000Z"
+                }
             }
-        }
-    })*/
+        })*/
     @UseGuards(AuthGuard)
     create(@Body() newUser: RegisterUserDto) {
-        return this.userService.create(newUser);
+        // return this.userService.create(newUser);
+        return this.authService.register(newUser);
     }
 
     @Patch('/:id')
